@@ -1,7 +1,9 @@
 {
   "name": "tafel",
   "scripts": {
-    "start": "ts-node index.ts"
+    "dev": "ts-node src/index.ts",
+    "start": "node dist/index.js",
+    "build": "tsc"
   },
   "author": {
     "name": "Marco Kaufmann",
