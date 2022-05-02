@@ -5,6 +5,7 @@
     "start": "node dist/index.js",
     "build": "tsc"
   },
+  "bin": "dist/index.js",
   "author": {
     "name": "Marco Kaufmann",
     "email": "marcokaufmann@malako.xyz"

@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import { createIssue, listIssues, listOpenIssues, printHead, printIssue } from './modules/issue'
 import { init } from './modules/init'
 
