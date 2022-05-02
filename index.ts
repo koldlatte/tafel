@@ -1,38 +1,44 @@
-import {
-  createIssue,
-  listIssues,
-  listOpenIssues,
-  printHead,
-  printIssue,
-} from "./modules/issue";
+import { createIssue, listIssues, listOpenIssues, printHead, printIssue } from './modules/issue'
+import { init } from './modules/init'
 
-const args = process.argv;
+init()
+const args = process.argv
 
 if (args.length < 3) {
-  console.log("No command specified.");
-  process.exit(1);
+  console.log('No command specified.')
+  process.exit(1)
 }
 
 switch (args[2]) {
-  case "create":
+  case 'create':
     if (args.length < 4) {
-      console.log("Argument missing: create <name>");
-      process.exit(1);
+      console.log('Argument missing: create <name>')
+      process.exit(1)
     }
-    createIssue(args[3]);
-    break;
-  case "ls":
-  case "list":
-    if (args.length >= 4 && args[3] === "all") {
-      const issues = listIssues();
+    createIssue(args[3])
+    break
+  case 'ls':
+  case 'list':
+    if (args.length >= 4 && args[3] === 'all') {
+      const issues = listIssues()
 
-      printHead();
-      issues.forEach((issue) => printIssue(issue));
+      if (issues.length === 0) {
+        console.log('No issues found.')
+        process.exit(0)
+      }
+
+      printHead()
+      issues.forEach((issue) => printIssue(issue))
     } else {
-      const issues = listOpenIssues();
+      const issues = listOpenIssues()
 
-      printHead();
-      issues.forEach((issue) => printIssue(issue));
+      if (issues.length === 0) {
+        console.log('No issues found.')
+        process.exit(0)
+      }
+
+      printHead()
+      issues.forEach((issue) => printIssue(issue))
     }
-    break;
+    break
 }
