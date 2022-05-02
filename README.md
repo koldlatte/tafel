@@ -3,10 +3,8 @@
 ## Getting Started
 
 ```bash
-# Install and link
-npm i
-npm run build
-npm link
+# Install
+npm i -g @koldlatte/tafel
 ```
 
 ## Commands

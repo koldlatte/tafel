@@ -2,7 +2,8 @@
   "compilerOptions": {
     "types": ["node"],
     "removeComments": true,
-    "outDir": "dist"
+    "outDir": "dist",
+    "declaration": true
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "**/*.spec.ts"]
