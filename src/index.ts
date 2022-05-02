@@ -18,8 +18,9 @@ switch (args[2]) {
     createIssue(args[3])
     break
   case 'ls':
+  case 'la':
   case 'list':
-    if (args.length >= 4 && args[3] === 'all') {
+    if ((args.length >= 4 && args[3] === 'all') || args[2] === 'la') {
       const issues = listIssues()
 
       if (issues.length === 0) {
