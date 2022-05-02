@@ -40,7 +40,7 @@ export function nextIssueId() {
   const issues = listIssues()
 
   const issueIds = issues.map((issue) => issue.id)
-  const max = Math.max(...issueIds)
+  const max = Math.max(...issueIds, 0)
 
   return max + 1
 }
