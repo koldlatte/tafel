@@ -3,7 +3,8 @@
     "types": ["node"],
     "removeComments": true,
     "outDir": "dist",
-    "declaration": true
+    "declaration": true,
+    "lib": ["ESNext"]
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "**/*.spec.ts"]
