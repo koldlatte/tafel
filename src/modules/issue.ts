@@ -83,22 +83,27 @@ function createIssueFile(issue: Issue) {
 }
 
 export function printHead() {
-  const name = 'Name'.padEnd(20, ' ')
+  const name = 'Name'.padEnd(40, ' ')
   const progress = '%'.padStart(5, ' ')
   const priority = 'Prio'.padStart(6, ' ')
   const status = 'Status'.padStart(6, ' ')
   const deadline = 'Deadline'.padEnd(20, ' ')
   console.log(`${name}  ${progress}  ${priority}  ${status}  ${deadline}`)
   console.log(
-    `${'-'.repeat(20)}  ${'-'.repeat(5)}  ${'-'.repeat(6)}  ${'-'.repeat(6)}  ${'-'.repeat(20)}`
+    `${'-'.repeat(40)}  ${'-'.repeat(5)}  ${'-'.repeat(6)}  ${'-'.repeat(6)}  ${'-'.repeat(20)}`
   )
 }
 
 export function printIssue(issue: Issue) {
-  const name = issue.name.padEnd(20, ' ')
+  const name = (issue.name.length > 40 ? issue.name.substring(0, 37) + '...' : issue.name).padEnd(
+    40,
+    ' '
+  )
   const progress = issue.progress.toString().padStart(3, ' ')
   const priority = issue.priority.padStart(6, ' ')
   const status = issue.status.padStart(6, ' ')
-  const deadline = issue.deadline.padEnd(20, ' ')
+  const deadline = (
+    issue.deadline.length > 20 ? issue.deadline.substring(0, 17) + '...' : issue.deadline
+  ).padEnd(20, ' ')
   console.log(`${name}  ${progress} %  ${priority}  ${status}  ${deadline}`)
 }
